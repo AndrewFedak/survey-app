@@ -1,18 +1,21 @@
 <table class="main-div" cellspacing="2" border="1" cellpadding="5">
     <tr>
-        <th>User Name</th>
-        <th>Questions And Answers</th>
+        <th>Прізвище, ім'я працівника</th>
+        <th>Питання і відповіді</th>
     </tr>
     <tr *ngFor='let user of users' class="secondary-div">
         <td>
             <p>{{user.userName}}</p>
         </td>
         <td>
-            <ol>
+            <ul>
                 <li *ngFor='let answer of user.userAnswers'>{{answer.questionName}} : {{answer.questionAnswerPoint}}</li>
-            </ol>
+            </ul>
+            <div>
+                Загальна кількість балів: {{user.sum}} ({{setParticularReply(user.sum)}})
+            </div>
         </td>
     </tr>
-    <button routerLink='/'>Back to survey</button>
+    <button routerLink='/'>Повернутись до опитування</button>
 </table>
 

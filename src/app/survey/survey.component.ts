@@ -26,6 +26,7 @@ export class SurveyComponent implements OnInit {
   }
 
   onSubmit(){
+    if(!this.userName || Object.keys(this.answers).length === 0) return;
     const userAnswers = [];
     for(const [key, value] of Object.entries(this.answers)) {
       userAnswers.push({questionName: key, questionAnswerPoint:value})

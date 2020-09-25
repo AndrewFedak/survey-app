@@ -9,7 +9,8 @@ export interface Answer {
   userAnswers: {
     questionName: string;
     questionAnswerPoint: number;
-  }[]
+  }[],
+  sum?: number;
 }
 
 @Injectable({

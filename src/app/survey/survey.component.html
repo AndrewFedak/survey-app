@@ -1,5 +1,14 @@
 <div>
-    <button [routerLink]='["admin-panel"]'>Admin Panel</button>
+    <button [routerLink]='["admin-panel"]'>Панель Адміна</button>
+    <p class='description'>
+        Добрий день! Хочемо, щоб робота у компанії приносила Вам лише задоволення, тому просимо  заповнити цей опитувальник, щоб ми могли зрозуміти, що варто покращити.  
+
+        Ваше завдання полягає в тому, щоб визначити своє ставлення до твердження і виставити відповідні бали. <br/><br/>
+        Шкала оцінювання від 1 до 11, <br/>
+        де 11 відповідає максимально позитивній оцінці даного твердження, <br/>
+        1 - максимально негативне ставлення, <br/>
+        6 - відображає нейтральне ставлення. <br/>
+    </p>
     <ol>
         <li *ngFor='let question of questions' [id]='question.id'>
             <p [class.include]='question.include'>{{question.question}}</p>
@@ -12,10 +21,10 @@
         </li>
     </ol>
     
-    <form (ngSubmit)='onSubmit()'>
-        Insert your full name:
-        <input type='text' placeholder="Full Name" [(ngModel)]='userName' name="first"/>
-        <button type="submit">Send Result</button>
+    <form (ngSubmit)='onSubmit()' class='submit-form'>
+        Введіть прізвище, ім'я:
+        <input type='text' placeholder="Прізвище, ім'я" [(ngModel)]='userName' name="first" required/>
+        <button type="submit">Надіслати відповідь</button>
     </form>
     
 </div>
