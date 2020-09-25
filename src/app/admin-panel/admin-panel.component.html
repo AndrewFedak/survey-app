@@ -1,0 +1,18 @@
+<table class="main-div" cellspacing="2" border="1" cellpadding="5">
+    <tr>
+        <th>User Name</th>
+        <th>Questions And Answers</th>
+    </tr>
+    <tr *ngFor='let user of users' class="secondary-div">
+        <td>
+            <p>{{user.userName}}</p>
+        </td>
+        <td>
+            <ol>
+                <li *ngFor='let answer of user.userAnswers'>{{answer.questionName}} : {{answer.questionAnswerPoint}}</li>
+            </ol>
+        </td>
+    </tr>
+    <button routerLink='/'>Back to survey</button>
+</table>
+

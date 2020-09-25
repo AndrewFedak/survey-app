@@ -1,0 +1,21 @@
+<div>
+    <button [routerLink]='["admin-panel"]'>Admin Panel</button>
+    <ol>
+        <li *ngFor='let question of questions' [id]='question.id'>
+            <p [class.include]='question.include'>{{question.question}}</p>
+            <form (change)='formChanged($event.target)'>
+                <label *ngFor='let radio of radios; let idx = index' class="radio-block">
+                    <input type="radio" class='kex' [value]='idx+1' [name]='question.question' [id]='question.id' [class.include]='question.include'/>
+                    <span>{{idx+1}}</span>
+                </label>
+            </form>
+        </li>
+    </ol>
+    
+    <form (ngSubmit)='onSubmit()'>
+        Insert your full name:
+        <input type='text' placeholder="Full Name" [(ngModel)]='userName' name="first"/>
+        <button type="submit">Send Result</button>
+    </form>
+    
+</div>
